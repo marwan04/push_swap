@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-t_list	*create_tab(int argc, char **argv, int boolean)
+t_sawp_list	*create_tab(int argc, char **argv, int boolean)
 {
-	t_list	*tab;
-	int		i;
+	t_sawp_list	*tab;
+	int			i;
 
-	tab = malloc(sizeof(t_list) * (argc + 1));
+	tab = malloc(sizeof(t_sawp_list) * (argc + 1));
 	if (tab == NULL)
 		return (NULL);
 	i = 0;
@@ -40,7 +40,7 @@ t_list	*create_tab(int argc, char **argv, int boolean)
 	return (tab);
 }
 
-t_list	get_min_stack(t_list *stack)
+t_sawp_list	get_min_stack(t_sawp_list *stack)
 {
 	int	start;
 	int	end;
@@ -58,7 +58,7 @@ t_list	get_min_stack(t_list *stack)
 	return (stack[min]);
 }
 
-t_list	get_max_stack(t_list *stack, int treshold)
+t_sawp_list	get_max_stack(t_sawp_list *stack, int treshold)
 {
 	int	start;
 	int	end;
@@ -69,16 +69,16 @@ t_list	get_max_stack(t_list *stack, int treshold)
 	max = -1;
 	while (start <= end)
 	{
-		if (max == -1 || ((stack[start].num > stack[max].num || \
-		stack[max].flag == -1) && (treshold == -1 || \
-		stack[start].num < treshold)))
+		if (max == -1 || ((stack[start].num > stack[max].num
+					|| stack[max].flag == -1) && (treshold == -1
+					|| stack[start].num < treshold)))
 			max = stack[start].index;
 		start++;
 	}
 	return (stack[max]);
 }
 
-t_list	get_min_above_tresh(t_list *stack, int treshold)
+t_sawp_list	get_min_above_tresh(t_sawp_list *stack, int treshold)
 {
 	int	start;
 	int	end;
@@ -89,8 +89,8 @@ t_list	get_min_above_tresh(t_list *stack, int treshold)
 	min = -1;
 	while (start <= end)
 	{
-		if (stack[start].num > treshold && \
-		(min == -1 || stack[start].num < stack[min].num))
+		if (stack[start].num > treshold && (min == -1
+				|| stack[start].num < stack[min].num))
 			min = stack[start].index;
 		start++;
 	}
@@ -99,7 +99,7 @@ t_list	get_min_above_tresh(t_list *stack, int treshold)
 	return (stack[min]);
 }
 
-int	is_sorted(t_list *stack)
+int	is_sorted(t_sawp_list *stack)
 {
 	int	i;
 

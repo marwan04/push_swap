@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	push_stack(t_list *stack_a, t_list *stack_b, char *str)
+void	push_stack(t_sawp_list *stack_a, t_sawp_list *stack_b, char *str)
 {
 	int	first;
 	int	end;
@@ -31,7 +31,7 @@ void	push_stack(t_list *stack_a, t_list *stack_b, char *str)
 	ft_putstr_fd(str, 1);
 }
 
-void	shift_up(t_list *stack, char *str)
+void	shift_up(t_sawp_list *stack, char *str)
 {
 	int	start;
 	int	end;
@@ -59,7 +59,7 @@ void	shift_up(t_list *stack, char *str)
 	ft_putstr_fd(str, 1);
 }
 
-void	shift_down(t_list *stack, char *str)
+void	shift_down(t_sawp_list *stack, char *str)
 {
 	int	start;
 	int	end;
@@ -87,7 +87,7 @@ void	shift_down(t_list *stack, char *str)
 	ft_putstr_fd(str, 1);
 }
 
-void	ft_swap(t_list *stack, char *msg)
+void	ft_swap(t_sawp_list *stack, char *msg)
 {
 	int	start;
 	int	temp;
@@ -99,7 +99,7 @@ void	ft_swap(t_list *stack, char *msg)
 	ft_putstr_fd(msg, 1);
 }
 
-void	ft_double_shift(t_list *stack_a, t_list *stack_b, int down_up)
+void	ft_double_shift(t_sawp_list *stack_a, t_sawp_list *stack_b, int down_up)
 {
 	if (down_up == 1)
 	{

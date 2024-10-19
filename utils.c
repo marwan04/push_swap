@@ -26,7 +26,7 @@ int	min(int a, int b)
 	return (a);
 }
 
-int	get_start_stack(t_list *stack)
+int	get_start_stack(t_sawp_list *stack)
 {
 	int	first;
 
@@ -38,7 +38,7 @@ int	get_start_stack(t_list *stack)
 	return (first);
 }
 
-int	get_end_stack(t_list *stack)
+int	get_end_stack(t_sawp_list *stack)
 {
 	int	end;
 
@@ -49,7 +49,7 @@ int	get_end_stack(t_list *stack)
 	return (end);
 }
 
-int	is_median(t_list *stack, int num)
+int	is_median(t_sawp_list *stack, int num)
 {
 	int	start;
 	int	end;
