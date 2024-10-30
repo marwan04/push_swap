@@ -1,29 +1,33 @@
 NAME = push_swap
-LIBFTNAME = libft.a
-CC = cc
-CFLAGS = -Wall -Werror -Wextra
-LIBFTDIR = ./libft
-SRCS = 	algo.c algo_helper.c operations.c push_swap.c stack_utils.c utils.c errors_handling.c
 
-OBJS = $(SRCS:.c=.o)
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+LIB = -L./libft -lft
+
+RM = rm -f
+
+SRCS = algo.c algo_helper.c operations.c push_swap.c stack_utils.c utils.c errors_handling.c
+
+OBJS = ${SRCS:.c=.o}
+
+LIBPATH	= libft/
 
 all: $(NAME)
 
-makelibft:
-	@make -C $(LIBFTDIR)
-	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
-
-$(NAME): makelibft $(OBJS)
-	@ar -r $(NAME) $(OBJS)
+${NAME}: ${OBJS}
+	 make -C ${LIBPATH}
+	 ${CC} ${CFLAGS} $^ ${LIB} -o $@
 
 clean:
-	@rm -f $(OBJS)
-	@cd $(LIBFTDIR) && make clean
-	
+	make clean -C ${LIBPATH}
+	${RM} ${OBJS}
+
 fclean: clean
-	@rm -f $(NAME)
-	@cd $(LIBFTDIR) && make fclean
-	
+	make fclean -C ${LIBPATH}
+	${RM} ${NAME}
+
 re: fclean all
 
+.PHONY: all clean fclean re

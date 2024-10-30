@@ -61,7 +61,7 @@ long long	ft_atoi_ps(char *str)
 	if (*str == '-')
 		result *= -1;
 	if (*str == '+' || *str == '-')
-		str++;;
+		str++;
 	while (*str)
 	{
 		ans = (ans * 10) + (*str - 48);
@@ -75,19 +75,16 @@ int	is_duplicate_number(int argc, char **argv)
 	int	i;
 	int	j;
 
-	if (argc == 2)
-	{
-		if (ft_atoi_ps(argv[0]) > 2147483647)
-			return (-1);
-	}
 	i = 0;
 	while (i < argc)
 	{
 		j = i + 1;
 		while (j < argc - 1)
 		{
-			if (ft_atoi_ps(argv[i]) > 2147483647 || ft_atoi_ps(argv[i]) < -2147483648
-				|| ft_atoi_ps(argv[j]) > 2147483647 || ft_atoi_ps(argv[j]) < -2147483648)
+			if (ft_atoi_ps(argv[i]) > 2147483647
+				|| ft_atoi_ps(argv[i]) < -2147483648
+				|| ft_atoi_ps(argv[j]) > 2147483647
+				|| ft_atoi_ps(argv[j]) < -2147483648)
 				return (-1);
 			if (ft_atoi_ps(argv[i]) == ft_atoi_ps(argv[j]))
 				return (-1);
@@ -104,12 +101,12 @@ int	ft_handle_errors(int argc, char **argv)
 		return (0);
 	if (is_args_number(argc, argv) == -1)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		return (-1);
 	}
 	if (is_duplicate_number(argc, argv) == -1)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		return (-1);
 	}
 	return (1);

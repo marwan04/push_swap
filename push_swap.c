@@ -6,11 +6,12 @@
 /*   By: malrifai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:24:21 by malrifai          #+#    #+#             */
-/*   Updated: 2024/10/19 16:25:22 by malrifai         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:55:20 by malrifai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	choose_resolve(t_sawp_list *stack_a, t_sawp_list *stack_b, int argc)
 {
@@ -66,6 +67,21 @@ void	ft_free(t_sawp_list *stack_a, t_sawp_list *stack_b,
 	if (stack_b != NULL)
 		free(stack_b);
 }
+/*
+void	print_stack(t_sawp_list *stack)
+{
+	int	i;
+
+	i = 0;
+	printf("Stack Contents:\n");
+	while (stack[i].index != -1)
+	{
+		printf("Index: %d, Num: %d, Flag: %d\n", stack[i].index, stack[i].num,
+			stack[i].flag);
+		i++;
+	}
+}
+*/
 
 int	main(int argc, char **argv)
 {
